@@ -82,6 +82,69 @@ body {
   box-shadow: 0px 0px 10px #1c1616;
 }
 
+.messenger .inbox {
+  width: 450px;
+  border-right: 1px solid black;
+  flex: inherit;
+}
+.messenger .chatbox {
+  flex: 1;
+  overflow: hidden;
+}
 .fixed {
   position: fixed;
+}
+.userbox {
+  border-bottom: 1px solid #111b21;
+  background-color: #222e35;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.inbox .userbox .you .user {
+  width: 34px;
+  height: 34px;
+  margin-left: 17px;
+}
+.inbox .userbox .you .user img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.inbox .userbox .actions {
+  flex: 1;
+  justify-content: flex-end;
+}
+.inbox .userbox .actions button {
+  width: 50px;
+  height: 50px;
+  border: 0px;
+  margin-left: 2px;
+  background-color: transparent;
+  color: rgb(184, 184, 184);
+}
+
+.fs20 svg {
+  font-size: 20px;
+}
+.fs20 {
+  font-size: 20px;
+}
+
+.fs15 {
+  font-size: 15px;
+}
+.fs11 {
+  font-size: 11px;
+}
+.fs13 {
+  font-size: 13px;
+}
+.fs16 {
+  font-size: 16px;
+}
+.fs12 {
+  font-size: 12px;
+}
+.fs24 {
+  font-size: 24px;
 }
