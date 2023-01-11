@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Chat from "./Chat";
 import { connect } from "react-redux";
 
@@ -6,13 +6,23 @@ import { connect } from "react-redux";
 function Messages(props) {
   //Destructuring props to access messages
   const { messages } = props;
+  // Create a reference to the last message element
+  const lastMessageRef = React.useRef(null);
+
+  // Use the useEffect hook to scroll to the last message when it updates
+  useEffect(() => {
+    if (lastMessageRef.current) {
+      lastMessageRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [messages.length]);
 
   //Rendering messages component
   return (
-    <div className="chat flex rel col">
+    <div className="chat flex  col">
       {messages.map((item, index) => (
-        <Chat meta={item} dir={index % 2 === 0 ? 1 : 0} />
+        <Chat meta={item} />
       ))}
+      <div ref={lastMessageRef} />
     </div>
   );
 }

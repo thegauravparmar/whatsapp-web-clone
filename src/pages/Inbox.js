@@ -9,7 +9,6 @@ import SearchIcon from "@mui/icons-material/Search";
 // It receives props from the redux store mapped to the component
 function Inbox(props) {
   const [list, setList] = useState("");
-  console.log(props);
   // Destructure props
   const { user, messages } = props;
 

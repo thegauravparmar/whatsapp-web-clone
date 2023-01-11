@@ -32,7 +32,7 @@ body {
       */
 }
 .initial img {
-  width: 400px;
+  width: 60%;
 }
 
 .flex {
@@ -421,6 +421,10 @@ legend {
   overflow-x: hidden;
   overflow-y: auto;
 }
+.chatbox {
+  background-color: #111b21;
+  overflow: inherit !important;
+}
 .chatbox:before {
   content: " ";
   display: block;
@@ -428,7 +432,7 @@ legend {
   left: 0;
   top: 60px;
   width: 100%;
-  height: 100%;
+  height: 90%;
   z-index: 0;
   opacity: 0.06;
   background-image: url(../images/bg-chat.png);
@@ -612,6 +616,7 @@ legend {
 
 .sender {
   padding: 10px;
+  bottom: 0px;
   background-color: #222e35;
 }
 .sender input {

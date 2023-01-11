@@ -70,7 +70,7 @@ const ChatSender = (props) => {
   };
   //JSX code
   return (
-    <div className="sender rel flex align">
+    <div className="sender rel  flex align">
       <button className="fs20">
         <SentimentSatisfiedAltIcon />
       </button>
