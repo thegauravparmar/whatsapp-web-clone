@@ -360,3 +360,53 @@ legend {
 #yui3-css-stamp.cssreset {
   display: none;
 }
+
+/* chat header  */
+
+.fixed.fill {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  bottom: 0px;
+}
+
+.chatbox .chatheader {
+  border-bottom: 1px solid #111b21;
+  background-color: #222e35;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.chatbox .chatheader .you .user {
+  width: 35px;
+  height: 35px;
+  margin-left: 17px;
+}
+.chatbox .chatheader .you .user img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.chatbox .chatheader .actions {
+  flex: 1;
+  justify-content: flex-end;
+}
+.chatbox .chatheader .actions button {
+  width: 50px;
+  height: 50px;
+  border: 0px;
+  margin-left: 2px;
+  background-color: transparent;
+  color: rgb(184, 184, 184);
+}
+.chatbox {
+  background-color: #111b21;
+}
+
+.chat-meta {
+  margin-left: 10px;
+}
+.chat-meta .name {
+  color: #e9edef;
+  z-index: 1;
+}
