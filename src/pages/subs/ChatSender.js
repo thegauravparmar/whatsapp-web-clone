@@ -53,7 +53,16 @@ const ChatSender = (props) => {
     let customDate = new Date();
     //get current hour and minute in 12 hour format
     const tstamp =
-      customDate.getHours() + ":" + customDate.getMinutes() + " AM";
+      (customDate.getHours().toString().length === 1
+        ? "0" + customDate.getHours()
+        : customDate.getHours() > 12
+        ? customDate.getHours() - 12
+        : customDate) +
+      ":" +
+      (customDate.getMinutes().toString().length === 1
+        ? "0" + customDate.getMinutes()
+        : customDate.getMinutes()) +
+      (customDate.getHours() > 12 ? " PM" : " AM");
     //create an object with data that needs to be added to messages array
     let dataToInsert = {
       id: maxId + 1,

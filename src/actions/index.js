@@ -17,3 +17,10 @@ export const updateChatStatusPos = (id) => ({
   type: "UPDATE_CHAT_STATUS_POS",
   id, //id of the chat to update positive
 });
+
+//for backend integration
+
+export const setInitialState = (state) => ({
+  type: "FETCH_INAPIITIAL_STATE",
+  payload: state,
+});
