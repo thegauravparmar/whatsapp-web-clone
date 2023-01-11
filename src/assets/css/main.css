@@ -191,6 +191,7 @@ input {
 .conversation {
   background-color: #111b21;
   padding: 10px 5px;
+  cursor: pointer;
 }
 .conversation .you .user {
   width: 45px;
