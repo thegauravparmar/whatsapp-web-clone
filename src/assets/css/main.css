@@ -609,3 +609,28 @@ legend {
 .greenclass {
   color: #06cf9c;
 }
+
+.sender {
+  padding: 10px;
+  background-color: #222e35;
+}
+.sender input {
+  background-color: #36434b;
+  border: 0px;
+  color: #ddd;
+  border-radius: 3px;
+  padding: 9px;
+}
+.sender button {
+  width: 45px;
+  height: 45px;
+  color: rgb(184, 184, 184);
+  background-color: #222e35;
+  border: 0px;
+}
+
+.attachmenu .menu-option {
+  bottom: 114px !important;
+  left: 554px !important;
+  top: auto;
+}
