@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import Initial from "./Initial";
 import ChatHeader from "./subs/ChatHeader";
 
+import Messages from "./subs/Messages";
+
 // This component renders the entire chat box.
 function ChatBox(props) {
   const { user } = props;
@@ -15,6 +17,7 @@ function ChatBox(props) {
   return data ? (
     <div className="chatbox flex rel col">
       <ChatHeader />
+      <Messages />
     </div>
   ) : (
     <Initial />

@@ -410,3 +410,202 @@ legend {
   color: #e9edef;
   z-index: 1;
 }
+
+.chatbox .chat {
+  border-top: 1px solid #111b21;
+  border-bottom: 1px solid #111b21;
+  position: relative;
+  padding: 20px 30px;
+  flex: 1;
+  z-index: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.chatbox:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 60px;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.06;
+  background-image: url(../images/bg-chat.png);
+  background-repeat: repeat;
+  /* background-size: cover;
+      */
+  background-attachment: inherit;
+}
+
+.chatbox .chat::-webkit-scrollbar {
+  width: 5px;
+}
+/* Track */
+.chatbox .chat::-webkit-scrollbar-track {
+  background: #111b21;
+}
+/* Handle */
+.chatbox .chat::-webkit-scrollbar-thumb {
+  background: #2d434f;
+}
+/* Handle on hover */
+.chatbox .chat::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper {
+  background-color: #202c33 !important;
+  color: #d1d7db !important;
+  margin-top: 20px !important;
+  box-shadow: #000 !important;
+}
+.css-1c716d8-MuiButtonBase-root-MuiMenuItem-root {
+  font-size: 15px !important;
+  padding-right: 58px !important;
+  padding-left: 24px !important;
+}
+
+.new-msg {
+  flex: 1;
+  width: 100%;
+}
+.chat-meta {
+  margin-left: 10px;
+}
+.chat-meta .name {
+  color: #e9edef;
+  z-index: 1;
+}
+.msg-text {
+  color: #e9edef;
+  padding: 5px;
+}
+.bubble .name {
+  padding-top: 2px;
+  margin-left: 5px;
+}
+/* .bubble {
+      flex: 1;
+  }
+  */
+.ballon {
+  display: table;
+  background-color: #222e35;
+  margin: 3px 0px;
+  padding: 5px 60px 5px 6px;
+  border-radius: 8px;
+  max-width: 400px;
+  /* padding: 5px;
+      */
+}
+.tail-left {
+  width: 0;
+  position: absolute;
+  z-index: 0;
+  top: 0px;
+  left: -12px;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-top: 20px solid #222e35;
+}
+.tail-right {
+  width: 0;
+  position: absolute;
+  z-index: 0;
+  top: 0px;
+  right: -11px;
+  height: 0;
+  border-right: 20px solid transparent;
+  border-top: 20px solid #005c4b;
+}
+.time-stamp {
+  color: #ffffff99;
+  bottom: 9px;
+  right: 7px;
+}
+
+.mine {
+  display: flex;
+  justify-content: flex-end !important;
+}
+.mine .ballon {
+  background-color: #005c4b;
+}
+.media.audio {
+  height: auto !important;
+}
+.audio-button {
+  border: 0px;
+  background-color: transparent;
+  color: rgb(184, 184, 184);
+}
+.controls {
+  flex: 1;
+  margin-top: 13px;
+}
+.controls .slider .knob {
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+}
+.slider {
+  height: 4px;
+  background-color: #ddd;
+  width: 220px;
+}
+.udp {
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+}
+.udp img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.media {
+  width: 300px;
+  height: 230px;
+  overflow: hidden;
+  border-radius: 5px;
+  padding: 2px 0px;
+  margin: 3px 0px;
+}
+.rmp {
+  padding: 5px;
+}
+.media .video-div,
+.image-div {
+  width: 100%;
+  height: 100%;
+  background-color: #f1f1f1;
+  background-size: cover !important;
+  overflow: hidden;
+  border-radius: 5px;
+}
+.insertblur {
+  -webkit-filter: blur(2px);
+}
+.play-button {
+  border: 0px;
+  color: #fff;
+  background-color: #000;
+  opacity: 0.6;
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+}
+.play-button svg {
+  font-size: 24px !important;
+}
+.audioplayer {
+  margin-bottom: 15px;
+}
+
+.blueclass {
+  color: #53bdeb;
+}
+.greenclass {
+  color: #06cf9c;
+}
