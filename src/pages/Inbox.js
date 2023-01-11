@@ -2,10 +2,20 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 
 import UserSection from "./subs/UserSection";
+import InboxItem from "./subs/InboxItem";
 import SearchIcon from "@mui/icons-material/Search";
 
+// This component renders all inbox elements
+// It receives props from the redux store mapped to the component
 function Inbox(props) {
   const [list, setList] = useState("");
+  console.log(props);
+  // Destructure props
+  const { user, messages } = props;
+
+  // Get current user data who is logged in
+  const data = user.filter((item) => item.chatStatus === true)[0];
+
   // Render the component
   return (
     <div className="inbox rel flex col">
@@ -24,6 +34,21 @@ function Inbox(props) {
             }}
           />
         </div>
+      </div>
+      <div className="chatlist">
+        {user
+          // Filter users based on search criteria
+          .filter((item) => {
+            if (list === "") {
+              return item;
+            } else if (item.name.toLowerCase().includes(list.toLowerCase())) {
+              return item;
+            }
+          })
+          // Render each user in the list
+          .map((item) => (
+            <InboxItem meta={item} messages={messages} currentUser={data} />
+          ))}
       </div>
     </div>
   );
