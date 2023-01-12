@@ -24,3 +24,8 @@ export const setInitialState = (state) => ({
   type: "FETCH_INAPIITIAL_STATE",
   payload: state,
 });
+
+export const setTopState = (state) => ({
+  type: "UPDATE_TOP_STATE",
+  payload: state,
+});

@@ -32,7 +32,7 @@ body {
       */
 }
 .initial img {
-  width: 60%;
+  width: 40%;
 }
 
 .flex {
@@ -256,7 +256,7 @@ input {
   word-wrap: break-word;
   white-space: nowrap;
   overflow: hidden;
-  max-width: 99%;
+  max-width: 80% !important;
   text-overflow: ellipsis;
 }
 

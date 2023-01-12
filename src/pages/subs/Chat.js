@@ -61,7 +61,7 @@ function Chat(props) {
                     <div className="knob abs aby" />
                   </div>
                   <div className="flex align">
-                    <h2 className="fs12 myfontcolor">{tstamp}</h2>
+                    <h2 className="fs12 myfontcolor">1:15</h2>
                   </div>
                 </div>
                 <div className="udp">

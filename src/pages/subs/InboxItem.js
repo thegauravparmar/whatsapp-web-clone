@@ -7,7 +7,7 @@ import { connect } from "react-redux";
 function InboxItem(props) {
   const { messages, currentUser, meta } = props; // destructuring props
 
-  const { dp, id, name } = meta; // destructuring meta
+  const { dp, id, name, chatStatus } = meta; // destructuring meta
   let itemUid = messages.find(
     (
       item // finding the most recent message sent by the user
@@ -52,6 +52,9 @@ function InboxItem(props) {
           <h2 className="name fs15  wordwrap">{name}</h2>
           <h2 className="last-message fs13 myfontcolor wordwrap">
             {itemUid.id > itemRid ? itemUid.text : itemRid.text}
+          </h2>
+          <h2 style={{ color: "#fff" }}>
+            {chatStatus == true ? "Active" : ""}
           </h2>
         </div>
         <div className="extra rel flex col align">

@@ -6,6 +6,7 @@ const initialState = {
       status: "Last Seen 5 minutes ago",
       dp: "https://placeimg.com/50/50/people",
       chatStatus: false,
+      currentLatest: 1,
     },
     {
       id: 2,
@@ -13,6 +14,7 @@ const initialState = {
       status: "Online",
       dp: "https://placeimg.com/50/50/people?v=1",
       chatStatus: false,
+      currentLatest: 1,
     },
     {
       id: 3,
@@ -20,6 +22,7 @@ const initialState = {
       status: "",
       dp: "https://placeimg.com/50/50/people?v=2",
       chatStatus: false,
+      currentLatest: 1,
     },
     {
       id: 4,
@@ -27,6 +30,7 @@ const initialState = {
       status: "Last Seen 20 minutes ago",
       dp: "https://placeimg.com/50/50/people?v=3",
       chatStatus: false,
+      currentLatest: 1,
     },
   ],
   messages: [
@@ -138,6 +142,7 @@ const initialState = {
       tstamp: "04:05 PM",
     },
   ],
+  incrementVal: 1,
 };
 
 export default function (state = initialState, action) {
@@ -167,6 +172,17 @@ export default function (state = initialState, action) {
         user: state.user.map((user) =>
           user.id === action.id ? { ...user, chatStatus: true } : user
         ),
+      };
+    case "UPDATE_TOP_STATE":
+      console.log(action.payload);
+      return {
+        ...state,
+        user: state.user.map((user) =>
+          user.id === action.payload.user.id
+            ? { ...user, currentLatest: action.payload.user.currentLatest }
+            : user
+        ),
+        incrementVal: action.payload.incrementVal,
       };
     default:
       return state;

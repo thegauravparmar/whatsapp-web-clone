@@ -44,6 +44,9 @@ function Inbox(props) {
               return item;
             }
           })
+          .sort((a, b) => {
+            return b.currentLatest - a.currentLatest;
+          })
           // Render each user in the list
           .map((item) => (
             <InboxItem meta={item} messages={messages} currentUser={data} />

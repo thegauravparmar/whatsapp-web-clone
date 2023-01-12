@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import MicIcon from "@mui/icons-material/Mic";
 import SentimentSatisfiedAltIcon from "@mui/icons-material/SentimentSatisfiedAlt";
 import AttachFileIcon from "@mui/icons-material/AttachFile";
@@ -9,7 +9,7 @@ import PersonIcon from "@mui/icons-material/Person";
 import SummarizeIcon from "@mui/icons-material/Summarize";
 import CameraAltIcon from "@mui/icons-material/CameraAlt";
 import ImageIcon from "@mui/icons-material/Image";
-import { addMessage } from "../../actions";
+import { addMessage, setTopState } from "../../actions";
 import { connect } from "react-redux";
 
 const MenuOption = styled(MenuItem)`
@@ -21,7 +21,7 @@ const MenuOption = styled(MenuItem)`
 //This component is the chat sender the user will use to send messages
 const ChatSender = (props) => {
   //Destructuring props to access user, messages
-  const { user, messages } = props;
+  const { user, messages, incrementVal } = props;
   //Filter user object to find the user who is currently chatting
   const data = user.filter((item) => item.chatStatus === true)[0];
   //returns the max id from the messages array
@@ -31,11 +31,18 @@ const ChatSender = (props) => {
   const [openDrawer, setOpenDrawer] = useState(false);
   //Set msgToSend to empty string
   const [msgToSend, setMsgToSend] = useState("");
-
+  const highlightInput = React.useRef(false);
   //handleClick opens the Menu
   const handleClick = (event) => {
     setOpen(event.currentTarget);
   };
+
+  // Use the useEffect hook to scroll to the last message when it updates
+  useEffect(() => {
+    if (highlightInput.current) {
+      highlightInput.current?.focus();
+    }
+  }, []);
 
   //handleClose closes the Menu
   const handleClose = () => {
@@ -46,9 +53,23 @@ const ChatSender = (props) => {
   const toggleDrawer = () => {
     setOpenDrawer(true);
   };
+
+  const updateTopState = () => {
+    // console.log(data);
+
+    let updateVal = {
+      user: {
+        id: data.id,
+        currentLatest: data.currentLatest + incrementVal,
+      },
+      incrementVal: data.currentLatest + incrementVal,
+    };
+    props.setTopState(updateVal);
+  };
   //handleSubmit is called when user sends a message
   const handleSubmit = (e) => {
     e.preventDefault();
+    updateTopState();
     //create new Date object
     let customDate = new Date();
     //get current hour and minute in 12 hour format
@@ -159,6 +180,8 @@ const ChatSender = (props) => {
             setMsgToSend(event.target.value);
           }}
           value={msgToSend}
+          id="input"
+          ref={highlightInput}
         ></input>
       </form>
       {/* MicIcon to send message */}
@@ -178,6 +201,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => ({
   addMessage: (newMsg) => dispatch(addMessage(newMsg)),
+  setTopState: (mydata) => dispatch(setTopState(mydata)),
 });
 
 // connect ChatSender component to redux
